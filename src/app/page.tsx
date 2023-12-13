@@ -1,71 +1,43 @@
-import { RocketCard } from "@/components/RocketCard";
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
-interface RocketData {
-  active: boolean;
-  boosters: number;
-  company: string;
-  cost_per_launch: number;
-  country: string;
-  description: string;
-  diameter: {
-    meters: number;
-    feet: number;
-  };
-  engines: {
-    engine_loss_max: number;
-    isp: {
-      sea_level: number;
-      vacuum: number;
-    };
-    layout: string;
-    number: number;
-    propellant_1: string;
-    propellant_2: string;
-    type: string;
-    version: string;
-  };
-  first_flight: string;
-  flickr_images: string[];
-  height: {
-    meters: number;
-    feet: number;
-  };
-  id: string;
-  landing_legs: {
-    number: number;
-    material?: number;
-  };
-  mass: {
-    kg: number;
-    lb: number;
-  };
-  name: string;
-  type: string;
-}
-
-export default async function Home() {
-  const res = await fetch("https://api.spacexdata.com/latest/rockets");
-  const data = await res.json();
-
+export default function Landing() {
   return (
-    <center>
-      <div id="rockets-grid">
-        {data.map((currData: RocketData) => {
-          return (
-            <Link
-              key={currData.id}
-              href={`/rocket/${currData.id}`}
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-              }}
-            >
-              <RocketCard {...currData} />
-            </Link>
-          );
-        })}
+    <>
+      <div className="landing-bg-image"></div>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          display: "flex",
+          width: "100%",
+          height: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h1
+          style={{
+            fontFamily: "cursive",
+          }}
+        >
+          <i>{"We've"} born on Earth...why not dying in Mars?</i>
+          <br />
+          <Link
+            href={"/home"}
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              width: "100%",
+              textAlign: "center",
+            }}
+          >
+            Explore
+          </Link>
+        </h1>
       </div>
-    </center>
+    </>
   );
 }

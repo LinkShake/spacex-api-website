@@ -4,6 +4,20 @@ body {
   padding: 0;
   background-color: black;
   color: white;
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+}
+
+.landing-bg-image {
+  /* position: absolute; */
+  height: 100%;
+  background-image: url("https://images.alphacoders.com/530/530505.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
 }
 
 #rockets-grid {

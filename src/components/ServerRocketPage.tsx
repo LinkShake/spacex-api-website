@@ -57,7 +57,7 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
       case "Falcon 9":
         return 5;
       case "Falcon Heavy":
-        return 1;
+        return 3;
       case "Starship":
         return 1;
       default:
@@ -70,13 +70,21 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
       <div className="img-shadow">
         <h1
           style={{
+            position: "absolute",
             color: "white",
-            width: "100vw",
-            textAlign: "center",
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
             zIndex: 101,
+            margin: 0,
+            padding: 0,
+            fontSize: "4em",
+            textShadow: "2px 2px black",
           }}
         >
-          {data.name}
+          {data.name.toUpperCase()}
         </h1>
         <img
           src={data.flickr_images[calculateImgSrcIdx()]}
