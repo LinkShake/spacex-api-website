@@ -2,6 +2,8 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: black;
+  color: white;
 }
 
 #rockets-grid {
@@ -15,9 +17,9 @@ body {
 }
 
 .rocketcard {
-  box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 20px -4px white;
+  -webkit-box-shadow: 0px 0px 20px -4px white;
+  -moz-box-shadow: 0px 0px 20px -4px white;
   transition: 0.2s;
   perspective: 600px;
   transform-style: preserve-3d;
@@ -51,6 +53,30 @@ body {
 
 .rocketcard-content {
   padding: 20px;
+}
+
+.img-shadow {
+  display: block;
+  position: relative;
+}
+
+.img-shadow:before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -moz-box-shadow: inset 0px 0px 10rem 5rem rgba(0, 0, 0, 1);
+  -webkit-box-shadow: inset 0px 0px 10rem 5rem rgba(0, 0, 0, 1);
+  box-shadow: inset 0px 0px 10rem 5rem rgba(0, 0, 0, 1);
+}
+
+@media (max-width: 550px) {
+  .img-shadow:before {
+    -moz-box-shadow: inset 0px 0px 5rem 2.5rem rgba(0, 0, 0, 1);
+    -webkit-box-shadow: inset 0px 0px 5rem 2.5rem rgba(0, 0, 0, 1);
+    box-shadow: inset 0px 0px 5rem 2.5rem rgba(0, 0, 0, 1);
+  }
 }
 
 @media (max-width: 1500px) {

@@ -1,8 +1,8 @@
-"use client";
+// "use client";
 import { ServerRocketPage } from "@/components/ServerRocketPage";
 import { Suspense } from "react";
 
-export default function RocketPage({
+export default async function RocketPage({
   params,
   searchParams,
 }: {
