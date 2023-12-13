@@ -1,4 +1,5 @@
 import { RocketCard } from "@/components/RocketCard";
+import Link from "next/link";
 
 interface RocketData {
   active: boolean;
@@ -51,7 +52,18 @@ export default async function Home() {
     <center>
       <div id="rockets-grid">
         {data.map((currData: RocketData) => {
-          return <RocketCard {...currData} key={currData.id} />;
+          return (
+            <Link
+              key={currData.id}
+              href={`/rocket/${currData.id}`}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              <RocketCard {...currData} />
+            </Link>
+          );
         })}
       </div>
     </center>
