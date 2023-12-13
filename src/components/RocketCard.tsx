@@ -1,6 +1,7 @@
-import { RocketCard } from "@/components/RocketCard";
+import { Carousel } from "./Carousel";
 
-interface RocketData {
+/* eslint-disable @next/next/no-img-element */
+interface RocketCardProps {
   active: boolean;
   boosters: number;
   company: string;
@@ -43,17 +44,16 @@ interface RocketData {
   type: string;
 }
 
-export default async function Home() {
-  const res = await fetch("https://api.spacexdata.com/latest/rockets");
-  const data = await res.json();
-
+export const RocketCard: React.FC<RocketCardProps> = (rocketData) => {
+  console.log(rocketData);
   return (
-    <center>
-      <div id="rockets-grid">
-        {data.map((currData: RocketData) => {
-          return <RocketCard {...currData} key={currData.id} />;
-        })}
+    <div className="rocketcard">
+      {/* <img src={rocketData.flickr_images[0]} alt="" /> */}
+      <Carousel imgs={rocketData.flickr_images} />
+      <div className="rocketcard-content">
+        <h2>{rocketData.name}</h2>
+        <p>{rocketData.description}</p>
       </div>
-    </center>
+    </div>
   );
-}
+};
