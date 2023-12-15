@@ -18,25 +18,23 @@ export default function Landing() {
           alignItems: "center",
         }}
       >
-        <h1
+        <Link
+          href={"/home"}
           style={{
-            fontFamily: "cursive",
+            textDecoration: "none",
+            color: "inherit",
+            width: "100%",
+            textAlign: "center",
           }}
         >
-          <i>{"We've"} born on Earth...why not dying in Mars?</i>
-          <br />
-          <Link
-            href={"/home"}
+          <h1
             style={{
-              textDecoration: "none",
-              color: "inherit",
-              width: "100%",
-              textAlign: "center",
+              fontFamily: "cursive",
             }}
           >
-            Explore
-          </Link>
-        </h1>
+            <i>{"We've"} born on Earth...why not dying in Mars?</i>
+          </h1>
+        </Link>
       </div>
     </>
   );

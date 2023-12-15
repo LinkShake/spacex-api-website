@@ -2,6 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import { Carousel } from "./Carousel";
+import { DiscoverMore } from "./DiscoverMore";
 
 interface RocketData {
   active: boolean;
@@ -97,6 +98,7 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
             objectFit: "cover",
           }}
         />
+        <DiscoverMore />
       </div>
       <p>{data.description}</p>
     </div>
