@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Carousel } from "./Carousel";
 import { DiscoverMore } from "./DiscoverMore";
+import { RocketClientWrapper } from "./RocketClientWrapper";
 
 interface RocketData {
   active: boolean;
@@ -51,20 +52,22 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
   const res = await fetch(`https://api.spacexdata.com/latest/rockets/${id}`);
   const data = (await res.json()) as RocketData;
 
-  const calculateImgSrcIdx = () => {
+  const calculateImgSrcIdx = (variant: "main" | "small" = "main") => {
     switch (data.name) {
       case "Falcon 1":
-        return 0;
+        return variant === "main" ? 0 : 1;
       case "Falcon 9":
-        return 5;
+        return variant === "main" ? 5 : 0;
       case "Falcon Heavy":
-        return 3;
+        return variant === "main" ? 3 : 0;
       case "Starship":
-        return 1;
+        return variant === "main" ? 1 : 0;
       default:
         return 0;
     }
   };
+
+  const smallImg = calculateImgSrcIdx("small");
 
   return (
     <div id="rocket-page-container">
@@ -100,7 +103,7 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
         />
         <DiscoverMore />
       </div>
-      <p>{data.description}</p>
+      <RocketClientWrapper {...{ ...data, imgIdx: smallImg }} />
     </div>
   );
 };
