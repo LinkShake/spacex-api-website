@@ -19,7 +19,7 @@ export default function Landing() {
         }}
       >
         <Link
-          href={"/home"}
+          href={"/rockets"}
           style={{
             textDecoration: "none",
             color: "inherit",
