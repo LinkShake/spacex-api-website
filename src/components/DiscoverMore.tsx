@@ -30,7 +30,6 @@ export const DiscoverMore = () => {
         style={{
           backgroundColor: "transparent",
           border: "none",
-          color: "white",
           cursor: "pointer",
           //   fontSize: "4em",
         }}
@@ -40,7 +39,9 @@ export const DiscoverMore = () => {
             margin: 0,
             padding: 0,
             color: "white",
-            // fontSize: "4em",
+            textShadow: "2px 2px black",
+            fontWeight: "bold",
+            fontSize: "2em",
           }}
         >
           MORE

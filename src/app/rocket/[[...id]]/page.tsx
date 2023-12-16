@@ -27,11 +27,6 @@ export default async function RocketPage({
         }
       >
         <ServerRocketPage id={params.id} />
-        <div
-          style={{
-            height: "200vh",
-          }}
-        ></div>
       </Suspense>
     </div>
   );

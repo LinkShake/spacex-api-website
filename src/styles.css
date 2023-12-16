@@ -71,11 +71,12 @@ body {
 }
 
 .img-shadow {
-  display: block;
+  display: contents;
   position: relative;
+  /* top: 0; */
 }
 
-.img-shadow:before {
+/* .img-shadow:before {
   display: block;
   content: "";
   position: absolute;
@@ -84,7 +85,7 @@ body {
   -moz-box-shadow: inset 0px 0px 10rem 5rem rgba(0, 0, 0, 1);
   -webkit-box-shadow: inset 0px 0px 10rem 5rem rgba(0, 0, 0, 1);
   box-shadow: inset 0px 0px 10rem 5rem rgba(0, 0, 0, 1);
-}
+} */
 
 .rocket-data-container {
   display: flex;
@@ -94,31 +95,33 @@ body {
 
 .description {
   display: flex;
+  /* flex-wrap: wrap; */
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 100px;
-  gap: 10px;
+  padding: 10vw;
+  gap: 5vw;
   box-sizing: border-box;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   transition: 0.5s;
 }
 
 .description iframe {
-  width: 50%;
+  width: 75%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
 .data {
   display: flex;
+  /* flex-wrap: wrap-reverse; */
   height: 100vh;
   justify-content: center;
   align-items: center;
-  padding: 100px;
-  gap: 10px;
+  padding: 10vw;
+  gap: 5vw;
   box-sizing: border-box;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   transition: 0.5s;
 }
 
@@ -130,18 +133,80 @@ body {
 
 table {
   border-collapse: collapse;
+  height: 100%;
+  padding: 2.5vw;
 }
 
 tr {
   border-bottom: 2px solid white;
 }
 
+tr :first-child {
+  font-weight: bold;
+}
+
+td {
+  text-align: center;
+}
+
+#rocket-page-nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  z-index: 200;
+  justify-content: flex-end;
+  height: 3.5rem;
+  background-color: white;
+  align-items: center;
+  padding: 2vw;
+  box-sizing: border-box;
+  gap: max(1vw, 1rem);
+}
+
+#rocket-page-nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  line-height: 1.25;
+  display: inline-block;
+  /* padding-top: 2rem; */
+  padding-bottom: 4px;
+  /* font-size: 4rem; */
+  font-weight: 1000;
+  background-image: linear-gradient(#040404 0 0);
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s, background-position 0s 0.3s;
+}
+
+#rocket-page-nav a:hover {
+  background-position: 100% 100%;
+  background-size: 100% 0.2vh;
+}
+
+@media (max-width: 900px) {
+  .data img,
+  .description iframe {
+    width: 100%;
+  }
+
+  table {
+    height: 50%;
+  }
+
+  .data,
+  .description {
+    flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 550px) {
-  .img-shadow:before {
+  /* .img-shadow:before {
     -moz-box-shadow: inset 0px 0px 5rem 2.5rem rgba(0, 0, 0, 1);
     -webkit-box-shadow: inset 0px 0px 5rem 2.5rem rgba(0, 0, 0, 1);
     box-shadow: inset 0px 0px 5rem 2.5rem rgba(0, 0, 0, 1);
-  }
+  } */
 }
 
 @media (max-width: 1500px) {

@@ -1,9 +1,11 @@
 "use client";
 
+import { useEffect } from "react";
 /* eslint-disable @next/next/no-img-element */
 import { Carousel } from "./Carousel";
 import { DiscoverMore } from "./DiscoverMore";
 import { RocketClientWrapper } from "./RocketClientWrapper";
+import { ClientNav } from "./ClientNav";
 
 interface RocketData {
   active: boolean;
@@ -71,7 +73,8 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
 
   return (
     <div id="rocket-page-container">
-      <div className="img-shadow">
+      <div className="img-shadow" id="top">
+        <ClientNav />
         <h1
           style={{
             position: "absolute",
@@ -102,6 +105,7 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
           }}
         />
         <DiscoverMore />
+        Clie
       </div>
       <RocketClientWrapper {...{ ...data, imgIdx: smallImg }} />
     </div>

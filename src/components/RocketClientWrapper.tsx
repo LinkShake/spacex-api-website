@@ -101,7 +101,7 @@ export const RocketClientWrapper: React.FC<RocketClientWrapperProps> = (
 
   return (
     <div className="rocket-data-container">
-      <div className="description">
+      <div className="description" id="description">
         <div>
           <h3>{rocketData.description}</h3>
         </div>
@@ -112,7 +112,7 @@ export const RocketClientWrapper: React.FC<RocketClientWrapperProps> = (
           allowFullScreen
         ></iframe>
       </div>
-      <div className="data">
+      <div className="data" id="data">
         <img
           src={rocketData.flickr_images[rocketData.imgIdx]}
           alt={rocketData.name}
