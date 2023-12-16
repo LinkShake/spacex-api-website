@@ -20,7 +20,7 @@ export const ClientNav = () => {
     <nav
       id="rocket-page-nav"
       style={{
-        opacity: ".5",
+        opacity: ".75",
       }}
     >
       <a href="#top">Top</a>

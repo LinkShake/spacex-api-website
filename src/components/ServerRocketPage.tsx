@@ -6,6 +6,12 @@ import { Carousel } from "./Carousel";
 import { DiscoverMore } from "./DiscoverMore";
 import { RocketClientWrapper } from "./RocketClientWrapper";
 import { ClientNav } from "./ClientNav";
+import falcon1 from "../../public/Falcon-1.gif";
+import falcon9 from "../../public/Falcon-9.gif";
+import falconHeavy from "../../public/Falcon-Heavy.gif";
+import starship from "../../public/Starship.gif";
+import Image from "next/image";
+// import ""
 
 interface RocketData {
   active: boolean;
@@ -54,6 +60,21 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
   const res = await fetch(`https://api.spacexdata.com/latest/rockets/${id}`);
   const data = (await res.json()) as RocketData;
 
+  const calculateGif = () => {
+    switch (data.name) {
+      case "Falcon 1":
+        return falcon1;
+      case "Falcon 9":
+        return falcon9;
+      case "Falcon Heavy":
+        return falconHeavy;
+      case "Starship":
+        return starship;
+      default:
+        return "";
+    }
+  };
+
   const calculateImgSrcIdx = (variant: "main" | "small" = "main") => {
     switch (data.name) {
       case "Falcon 1":
@@ -93,8 +114,8 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
         >
           {data.name.toUpperCase()}
         </h1>
-        <img
-          src={data.flickr_images[calculateImgSrcIdx()]}
+        <Image
+          src={calculateGif()}
           alt={data.name}
           style={{
             width: "100%",
@@ -105,7 +126,6 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
           }}
         />
         <DiscoverMore />
-        Clie
       </div>
       <RocketClientWrapper {...{ ...data, imgIdx: smallImg }} />
     </div>
