@@ -53,13 +53,13 @@ export const RocketClientWrapper: React.FC<RocketClientWrapperProps> = (
   const calculateVideoRef = () => {
     switch (rocketData.name) {
       case "Falcon 9":
-        return "https://www.youtube.com/embed?v=Z4TXCZG_NEY";
+        return "https://www.youtube.com/embed/Z4TXCZG_NEY?si=R81PxwRY-pRR-i9j";
       case "Falcon 1":
-        return "https://www.youtube.com/embed?v=mq2hymWPN1I";
+        return "https://www.youtube.com/embed/mq2hymWPN1I?si=qwEJkuUG_r_qyoK_";
       case "Falcon Heavy":
-        return "https://www.youtube.com/embed?v=A0FZIwabctw";
+        return "https://www.youtube.com/embed/A0FZIwabctw?si=oiS0-0bupvVyDHGT";
       case "Starship":
-        return "https://www.youtube.com/embed?v=C3iHAgwIYtI";
+        return "https://www.youtube.com/embed/C3iHAgwIYtI?si=MYJDGU3SBenR4VkN";
       default:
         return "";
     }
