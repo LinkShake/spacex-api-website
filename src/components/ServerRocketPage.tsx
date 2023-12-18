@@ -94,7 +94,8 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
 
   return (
     <div id="rocket-page-container">
-      <div className="img-shadow" id="top">
+      <div id="top"></div>
+      <div className="img-shadow">
         <ClientNav />
         <h1
           style={{
