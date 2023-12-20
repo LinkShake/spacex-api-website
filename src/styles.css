@@ -304,6 +304,7 @@ table {
   border-collapse: collapse;
   height: 100%;
   padding: 2.5vw;
+  margin-bottom: 5rem;
 }
 
 tr {
