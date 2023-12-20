@@ -373,7 +373,7 @@ td {
 @media (orientation: landscape) and (max-height: 650px) {
   .data,
   .description {
-    height: fit-content !important;
+    height: max(fit-content, 100vw) !important;
     padding: 10vh !important;
     gap: 7.5vh !important;
     /* border: 2px solid red; */
