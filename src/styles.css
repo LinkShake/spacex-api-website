@@ -371,25 +371,16 @@ td {
 }
 
 @media (orientation: landscape) and (max-height: 650px) {
-  .description {
-    height: max(fit-content, 100vw) !important;
+  .description,
+  .data {
+    height: fit-content !important;
     padding: 10vh !important;
     gap: 7.5vh !important;
     /* border: 2px solid red; */
   }
 
-  .data {
-    height: fit-content !important;
-    padding: 10vh !important;
-    gap: 7.5vh !important;
-  }
-
   .rocket-data-container {
     gap: 15rem;
-  }
-
-  .data {
-    border: 2px solid red;
   }
 }
 
