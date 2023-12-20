@@ -127,7 +127,7 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
             objectFit: "cover",
           }}
         />
-        <DiscoverMore />
+        {/* <DiscoverMore /> */}
       </div>
       <RocketClientWrapper {...{ ...data, imgIdx: smallImg }} />
     </div>
