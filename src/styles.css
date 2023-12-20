@@ -373,6 +373,8 @@ td {
   .data,
   .description {
     height: 100vw;
+    padding: 10vh;
+    gap: 5vh;
   }
 }
 
