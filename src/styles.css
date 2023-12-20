@@ -379,10 +379,9 @@ td {
     /* border: 2px solid red; */
   }
 
-  /* .data {
-    height: fit-content !important;
-    border: 2px solid red;
-  } */
+  .rocket-data-container {
+    gap: 15rem;
+  }
 }
 
 @media (max-width: 550px) {
