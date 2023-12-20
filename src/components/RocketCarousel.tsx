@@ -16,6 +16,7 @@ export const RocketCarousel = ({ imgs }: { imgs: string[] }) => {
         width: "50%",
         // border: "2px solid red",
       }}
+      className="rocket-carousel-wrapper"
     >
       <div className="rocket-carousel">
         {imgs.map((src, idx) => {

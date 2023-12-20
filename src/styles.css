@@ -363,6 +363,10 @@ td {
   .description {
     flex-wrap: wrap;
   }
+
+  .rocket-carousel-wrapper {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 550px) {
