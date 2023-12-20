@@ -9,6 +9,32 @@ body {
   /* position: relative; */
 }
 
+#rockets-body {
+  position: relative;
+  width: 100%;
+  background-color: white;
+}
+
+#rockets-body::before {
+  content: "";
+  width: 17.5%;
+  height: 100%;
+  background: linear-gradient(to right, #44403c, white);
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+#rockets-body::after {
+  content: "";
+  width: 17.5%;
+  height: 100%;
+  background: linear-gradient(to left, #44403c, white);
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+}
+
 .landing-bg-image {
   /* position: absolute; */
   height: 100%;
