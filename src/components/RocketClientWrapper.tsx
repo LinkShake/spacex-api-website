@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { RocketCarousel } from "./RocketCarousel";
 
 interface RocketClientWrapperProps {
   active: boolean;
@@ -113,10 +114,7 @@ export const RocketClientWrapper: React.FC<RocketClientWrapperProps> = (
         ></iframe>
       </div>
       <div className="data" id="data">
-        <img
-          src={rocketData.flickr_images[rocketData.imgIdx]}
-          alt={rocketData.name}
-        />
+        <RocketCarousel imgs={rocketData.flickr_images} />
         <table>
           <tbody>
             <tr>

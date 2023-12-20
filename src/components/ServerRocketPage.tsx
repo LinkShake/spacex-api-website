@@ -111,6 +111,7 @@ export const ServerRocketPage = async ({ id }: { id: string }) => {
             padding: 0,
             fontSize: "4em",
             textShadow: "2px 2px black",
+            textAlign: "center",
           }}
         >
           {data.name.toUpperCase()}

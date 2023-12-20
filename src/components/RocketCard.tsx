@@ -49,6 +49,7 @@ interface RocketCardProps {
 export const RocketCard: React.FC<RocketCardProps> = (rocketData) => {
   const [style, setStyle] = useState({});
   const onHover = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (window.innerWidth < 800) return;
     const { top, width, left, height } =
       e.currentTarget.getBoundingClientRect();
     const { clientX, clientY } = e;

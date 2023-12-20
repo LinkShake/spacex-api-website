@@ -49,15 +49,19 @@ body {
   width: 100%;
 } */
 
-.carousel {
+.carousel,
+.rocket-carousel {
   position: relative;
   max-width: 100%;
-  width: 100%;
   height: 30rem;
   overflow: hidden;
 }
 
-.carousel img {
+.carousel {
+  width: 100%;
+}
+.carousel img,
+.rocket-carousel img {
   position: absolute;
   left: 0;
   width: 100%;
@@ -125,9 +129,53 @@ body {
   transition: 0.5s;
 }
 
-.data img {
-  width: 50%;
-  aspect-ratio: 16 / 9 !important;
+.data .rocket-carousel {
+  width: 100%;
+  /* aspect-ratio: 16 / 9 !important; */
+  /* object-fit: cover; */
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  transition: 0.2s;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #717171;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #bbb;
+}
+
+.prev:not(:disabled),
+.next:not(:disabled) {
+  cursor: pointer;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover:not(:disabled),
+.next:hover:not(:disabled) {
+  background-color: gray;
+}
+
+.data .rocket-carousel img {
   object-fit: cover;
 }
 
@@ -187,7 +235,7 @@ td {
 }
 
 @media (max-width: 900px) {
-  .data img,
+  .data .rocket-carousel img,
   .description iframe {
     width: 100%;
   }
