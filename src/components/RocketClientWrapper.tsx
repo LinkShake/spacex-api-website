@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { RocketCarousel } from "./RocketCarousel";
 
 interface RocketClientWrapperProps {
@@ -51,6 +51,8 @@ interface RocketClientWrapperProps {
 export const RocketClientWrapper: React.FC<RocketClientWrapperProps> = (
   rocketData
 ) => {
+  let lastScrollTop = useRef(0);
+
   const calculateVideoRef = () => {
     switch (rocketData.name) {
       case "Falcon 9":
