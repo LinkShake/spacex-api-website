@@ -216,13 +216,18 @@ body {
   display: flex;
   /* flex-wrap: wrap; */
   justify-content: center;
-  align-items: center;
+  align-items: auto;
   height: 100vh;
   padding: 10vw;
   gap: 5vw;
   box-sizing: border-box;
   /* border: 2px solid red; */
   transition: 0.5s;
+}
+
+.description div {
+  display: flex;
+  align-items: center;
 }
 
 .description iframe {
